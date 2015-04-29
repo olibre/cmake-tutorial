@@ -1,6 +1,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 #include <fstream>
+#include <stdint.h>
 using namespace std;
 
 class Header;
