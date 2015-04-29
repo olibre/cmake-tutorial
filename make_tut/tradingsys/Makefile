@@ -8,8 +8,8 @@ BLDDIR = build
 
 CC = g++
 LD = g++
-LDFLAGS = -stdlib=libstdc++
-CFLAGS =  -stdlib=libstdc++
+LDFLAGS = #-stdlib=libstdc++
+CFLAGS =  #-stdlib=libstdc++
 
 TRADING_SYS_OBJS := $(patsubst %.cpp, $(BLDDIR)/%.o, $(TRADING_SYS_SRCS))
 
@@ -22,10 +22,9 @@ clean:
 	rmdir $(BLDDIR) || true
 
 # dependencies, additional to the recipes below
+#$(BLDDIR)/%: $(TRADING_SYS_OBJS)
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
-
-$(BLDDIR)/%:
-	$(LD) -o $@ $(LDFLAGS) $^
+	$(LD) $(LDFLAGS) $^ -o $@
 
 $(BLDDIR)/%.o: %.cpp
 	$(CC) -o $@ $(CFLAGS) -c $<
