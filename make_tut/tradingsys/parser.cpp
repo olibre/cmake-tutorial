@@ -1,7 +1,7 @@
 #include "packets.h"
 #include "parser.h"
 //#define CHECK_BORDER
-inline void Parser::readHeader(Header& h, fstream& fin){
+void Parser::readHeader(Header& h, fstream& fin){
 	char		buf[8];
 	fin.read((char*)h.marker, 2);
 	h.marker[2]	       = 0;

@@ -27,11 +27,12 @@ $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
 	$(LD) $(LDFLAGS) $^ -o $@
 
 $(BLDDIR)/%.o: %.cpp
+	@mkdir -p $(dir $(BLDDIR)/%.o)
 	$(CC) -o $@ $(CFLAGS) -c $<
 
 
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
-$(BLDDIR)/trading_sys.o: packets.h
-$(BLDDIR)/parser.o: parser.h
+$(BLDDIR)/trading_sys.o: parser.h packets.h
+$(BLDDIR)/parser.o: parser.h packets.h
 
 .PHONY: all
