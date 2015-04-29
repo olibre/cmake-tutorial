@@ -33,6 +33,6 @@ $(BLDDIR)/%.o: %.cpp
 
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
 $(BLDDIR)/trading_sys.o: parser.h packets.h
-$(BLDDIR)/parser.o: parser.h packets.h
+$(BLDDIR)/parser.o: packets.h
 
 .PHONY: all
