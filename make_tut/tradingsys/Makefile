@@ -1,8 +1,8 @@
 BINARIES = trading_sys
 
 TRADING_SYS_SRCS = \
-trading_sys.cpp      \
-parser.cpp        \
+trading_sys.cpp    \
+parser.cpp         \
 
 BLDDIR = build
 
@@ -27,7 +27,7 @@ $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
 	$(LD) $(LDFLAGS) $^ -o $@
 
 $(BLDDIR)/%.o: %.cpp
-	@mkdir -p $(dir $(BLDDIR)/%.o)
+	@mkdir -p $(dir $@)
 	$(CC) -o $@ $(CFLAGS) -c $<
 
 
