@@ -24,8 +24,7 @@ clean:
 $(BLDDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CC) -o $@ $(CFLAGS) -c $<
-$(BLDDIR)/parser.o: parser.h
-$(BLDDIR)/trading_sys.o: parser.h
+
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
 	$(LD) $(LDFLAGS) $^ -o $@
 
