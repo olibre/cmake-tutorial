@@ -13,7 +13,7 @@ inline void Parser::readHeader(Header& h, fstream& fin){
 	fin.read((char*)&h.msg_direction, 1);
 	fin.read(buf, 2);
 	h.msg_len	       = readUInt16(buf);
-    }
+}
 
 inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
 	char		buf[256+9];

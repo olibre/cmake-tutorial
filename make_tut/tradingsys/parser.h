@@ -1,8 +1,14 @@
 #ifndef PARSER_H
 #define PARSER_H
 #include <fstream>
-#include "packets.h"
+#include <stdint.h>
 using namespace std;
+
+class Header;
+class OrderAck;
+class OrderFill;
+class OrderEntry;
+
 class Parser {
 public:
     static inline void readHeader(Header& h, fstream& fin);
