@@ -1,7 +1,7 @@
 #include "packets.h"
 #include "parser.h"
 //#define CHECK_BORDER
-inline void Parser::readHeader(Header& h, fstream& fin){
+ void Parser::readHeader(Header& h, fstream& fin){
 	char		buf[8];
 	fin.read((char*)h.marker, 2);
 	h.marker[2]	       = 0;
@@ -13,9 +13,9 @@ inline void Parser::readHeader(Header& h, fstream& fin){
 	fin.read((char*)&h.msg_direction, 1);
 	fin.read(buf, 2);
 	h.msg_len	       = readUInt16(buf);
-}
+    }
 
-inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
+ void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
 	char		buf[256+9];
 	char term[9]	       = "DBDBDBDB";
 	fin.read(buf, 8);
@@ -58,7 +58,7 @@ inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
 	o.firm[i]	       = 0;
     }
 
-inline void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o){
+ void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o){
 	char		buf[8];
 	fin.read(buf, 4);
 	o.order_id	       = readUInt32(buf);
@@ -78,7 +78,7 @@ inline void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o){
 #endif
     }
     
-inline void Parser::readOrderFill(uint16_t len, fstream& fin, OrderFill& o){
+ void Parser::readOrderFill(uint16_t len, fstream& fin, OrderFill& o){
 	char		buf[512];
 	fin.read(buf, 4);
 	o.order_id	       = readUInt32(buf);
