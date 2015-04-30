@@ -28,4 +28,4 @@ $(BLDDIR)/%.o: %.cpp
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
 	$(LD) $(LDFLAGS) $^ -o $@
 
-.PHONY: all
+.PHONY: all clean
