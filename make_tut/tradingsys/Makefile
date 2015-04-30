@@ -13,7 +13,6 @@ CFLAGS =  #-stdlib=libstdc++
 
 TRADING_SYS_OBJS := $(patsubst %.cpp, $(BLDDIR)/%.o, $(TRADING_SYS_SRCS))
 
-# "all" (default target) depends on the built binaries
 all: $(patsubst %, $(BLDDIR)/%, $(BINARIES))
 
 clean:
