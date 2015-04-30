@@ -23,8 +23,6 @@ clean:
 
 # dependencies, additional to the recipes below
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
-
-$(BLDDIR)/%:
 	$(LD) -o $@ $(LDFLAGS) $^
 
 $(BLDDIR)/%.o: %.cpp
@@ -32,7 +30,6 @@ $(BLDDIR)/%.o: %.cpp
 
 
 $(BLDDIR)/trading_sys: $(TRADING_SYS_OBJS)
-$(BLDDIR)/trading_sys.o: packets.h
-$(BLDDIR)/parser.o: parser.h
+
 
 .PHONY: all

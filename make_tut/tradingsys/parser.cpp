@@ -1,6 +1,7 @@
 #include "packets.h"
+#include "parser.h"
 //#define CHECK_BORDER
-static inline void Parser::readHeader(Header& h, fstream& fin){
+inline void Parser::readHeader(Header& h, fstream& fin){
 	char		buf[8];
 	fin.read((char*)h.marker, 2);
 	h.marker[2]	       = 0;
@@ -14,7 +15,7 @@ static inline void Parser::readHeader(Header& h, fstream& fin){
 	h.msg_len	       = readUInt16(buf);
     }
 
-static inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
+inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry& o){
 	char		buf[256+9];
 	char term[9]	       = "DBDBDBDB";
 	fin.read(buf, 8);
@@ -57,7 +58,7 @@ static inline void Parser::readOrderEntry(uint16_t len, fstream& fin, OrderEntry
 	o.firm[i]	       = 0;
     }
 
-static inline void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o){
+inline void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o){
 	char		buf[8];
 	fin.read(buf, 4);
 	o.order_id	       = readUInt32(buf);
@@ -77,7 +78,7 @@ static inline void Parser::readOrderAck(uint16_t len, fstream& fin, OrderAck& o)
 #endif
     }
     
-static inline void Parser::readOrderFill(uint16_t len, fstream& fin, OrderFill& o){
+inline void Parser::readOrderFill(uint16_t len, fstream& fin, OrderFill& o){
 	char		buf[512];
 	fin.read(buf, 4);
 	o.order_id	       = readUInt32(buf);
@@ -106,7 +107,7 @@ static inline void Parser::readOrderFill(uint16_t len, fstream& fin, OrderFill& 
 #endif
     }
 
-static uint16_t Parser::readUInt16(char* buf){
+uint16_t Parser::readUInt16(char* buf){
 	
 	uint16_t	b0, b1, res;
 	b0		       = buf[0];
@@ -115,7 +116,7 @@ static uint16_t Parser::readUInt16(char* buf){
 	return res;
     }
     
-static uint16_t Parser::readUInt8(char* buf){
+uint16_t Parser::readUInt8(char* buf){
 	
 	uint16_t	b0, res;
 	b0		       = buf[0];
@@ -123,7 +124,7 @@ static uint16_t Parser::readUInt8(char* buf){
 	return res;
     }
     
-static uint64_t Parser::readUInt64(char* buf){
+uint64_t Parser::readUInt64(char* buf){
 	uint64_t	sum    = 0;
 	uint64_t	b0     = buf[0],b1 = buf[1], b2 = buf[2], b3 = buf[3] ,b4=buf[4] ,b5=buf[5], b6=buf[6] ,b7=buf[7];
 	sum		       = b0 | b1<<8 | b2<<16 | b3<<24 | b4<<32 
@@ -133,7 +134,7 @@ static uint64_t Parser::readUInt64(char* buf){
 	
     }
     
-static uint32_t Parser::readUInt32(char* buf){
+uint32_t Parser::readUInt32(char* buf){
 	uint64_t	sum    = 0;
 	uint64_t	b0     = buf[0],b1 = buf[1], b2 = buf[2], b3 = buf[3];
 	sum		       = b0 | b1<<8 | b2<<16 | b3<<24;
