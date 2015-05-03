@@ -1,1 +1,4 @@
+tutorial
 http://www.cmake.org/cmake-tutorial/
+src
+http://public.kitware.com/cgi-bin/viewcvs.cgi/CMake/Tests/Tutorial/
