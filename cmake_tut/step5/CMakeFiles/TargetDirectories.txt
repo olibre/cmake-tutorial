@@ -1,0 +1,3 @@
+/Users/jinwei/cmake/cmake_tut/step5/MathFunctions/CMakeFiles/MathFunctions.dir
+/Users/jinwei/cmake/cmake_tut/step5/MathFunctions/CMakeFiles/MakeTable.dir
+/Users/jinwei/cmake/cmake_tut/step5/CMakeFiles/Tutorial.dir
