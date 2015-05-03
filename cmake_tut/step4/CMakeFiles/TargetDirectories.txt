@@ -1,0 +1,2 @@
+/Users/jinwei/cmake/cmake_tut/step4/MathFunctions/CMakeFiles/MathFunctions.dir
+/Users/jinwei/cmake/cmake_tut/step4/CMakeFiles/Tutorial.dir
