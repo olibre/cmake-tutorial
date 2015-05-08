@@ -1,0 +1,691 @@
+cscope 15 $HOME/cmake/make_tut/linkedlist               0000003111
+	@LinearNode.cpp
+
+1 #iâdeà
+LINEARNODE_ýp
+
+
+2 
+	#LINEARNODE_ýp
+
+
+	)
+
+3 
+	~<io¡»am
+>
+
+4 
+	~"Lš—rNode.h
+"
+
+6 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+9 
+	gLš—rNode
+::
+	$Lš—rNode
+()
+
+11 
+Ãxt
+ = 
+NULL
+;
+
+12 
+–em’t
+ = 0;
+
+13 
+	}
+}
+
+16 
+	gLš—rNode
+::
+	$Lš—rNode
+(
+–
+)
+
+18 
+Ãxt
+ = 
+NULL
+;
+
+19 
+´evious
+ = 
+NULL
+;
+
+20 
+–em’t
+ = 0;
+
+21 
+	}
+}
+
+24 
+Lš—rNode
+* 
+	gLš—rNode
+::
+	$g‘Next
+()
+
+26  
+Ãxt
+;
+
+27 
+	}
+}
+
+30 
+Lš—rNode
+* 
+	gLš—rNode
+::
+	$g‘P»vious
+()
+
+32  
+´evious
+;
+
+33 
+	}
+}
+
+36 
+	gLš—rNode
+::
+	$£tNext
+(
+Lš—rNode
+* 
+node
+)
+
+38 
+Ãxt
+ = 
+node
+;
+
+39 
+	}
+}
+
+42 
+	gLš—rNode
+::
+	$£tP»vious
+(
+Lš—rNode
+* 
+node
+)
+
+44 
+´evious
+ = 
+node
+;
+
+45 
+	}
+}
+
+48 
+	gLš—rNode
+::
+	$g‘EËm’t
+()
+
+50  
+–em’t
+;
+
+51 
+	}
+}
+
+54 
+	gLš—rNode
+::
+	$£tEËm’t
+(
+–
+)
+
+56 
+–em’t
+ = 
+–
+;
+
+57 
+	}
+}
+
+	@LinearNode.h
+
+1 #iâdeà
+LINEARNODE_H
+
+
+2 
+	#LINEARNODE_H
+
+
+	)
+
+3 
+	~<io¡»am
+>
+
+5 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+7 þas 
+	cLš—rNode
+
+
+9 
+	mpublic
+:
+
+11 
+Lš—rNode
+();
+
+13 
+Lš—rNode
+(
+–
+);
+
+15 
+Lš—rNode
+* 
+g‘Next
+();
+
+17 
+Lš—rNode
+* 
+g‘P»vious
+();
+
+19 
+£tNext
+(
+Lš—rNode
+* 
+node
+);
+
+21 
+£tP»vious
+(
+Lš—rNode
+* 
+node
+);
+
+23 
+£tEËm’t
+(
+–
+);
+
+25 
+g‘EËm’t
+();
+
+27 
+	m´iv©e
+:
+
+28 
+Lš—rNode
+* 
+Ãxt
+;
+
+29 
+Lš—rNode
+* 
+	m´evious
+;
+
+30 
+	m–em’t
+;
+
+	@LinkedList.cpp
+
+1 #iâdeà
+LINKEDLIST_CPP
+
+
+2 
+	#LINKEDLIST_CPP
+
+
+	)
+
+4 
+	~<io¡»am
+>
+
+5 
+	~"Lš—rNode.h
+"
+
+6 
+	~"LškedLi¡.h
+"
+
+8 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+11 
+	gLškedLi¡
+::
+	$LškedLi¡
+()
+
+13 
+couÁ
+ = 0;
+
+14 
+cÚ‹Ás
+ = 
+NULL
+;
+
+15 
+	}
+}
+
+18 
+	gLškedLi¡
+::
+	$add
+(
+–em’t
+)
+
+20 
+found
+ = 0, 
+cu¼’t
+ = 0;
+
+22  (
+found
+ =ð0è&& (
+cu¼’t
+ !=
+couÁ
+) )
+
+24 ià(
+cÚ‹Ás
+->
+	`g‘EËm’t
+(è=ð
+–em’t
+)
+
+25 
+found
+ = 1;
+
+28 
+cÚ‹Ás
+ = cÚ‹Ás->
+	`g‘Next
+();
+
+29 
+cu¼’t
+++;
+
+33 ià(
+found
+ == 0)
+
+35 
+Lš—rNode
+* 
+node
+ = 
+Ãw
+ 
+	`Lš—rNode
+(
+–em’t
+);
+
+36 
+node
+->
+	`£tNext
+(
+cÚ‹Ás
+);
+
+37 
+cÚ‹Ás
+->
+	`£tP»vious
+(
+node
+);
+
+38 
+couÁ
+++;
+
+40 
+	}
+}
+
+43 
+	gLškedLi¡
+::
+	$»move
+(
+–em’t
+)
+
+45 
+found
+ = 0;
+
+47 ià(
+couÁ
+ == 0)
+
+48 
+cout
+ << "Thli¡ i em±y" << 
+’dl
+;
+
+51 ià(
+cÚ‹Ás
+->
+	`g‘EËm’t
+(è=ð
+–em’t
+)
+
+53 
+»suÉ
+ = 
+cÚ‹Ás
+->
+	`g‘EËm’t
+();
+
+54 
+cÚ‹Ás
+ = cÚ‹Ás->
+	`g‘Next
+();
+
+58 
+´evious
+ = 
+cÚ‹Ás
+;
+
+59 
+cu¼’t
+ = 
+cÚ‹Ás
+->
+	`g‘Next
+();
+
+60 
+šdex
+ = 0; ( (šdex < 
+couÁ
+è&& (
+found
+ == 0) )index++)
+
+61 ià(
+cu¼’t
+->
+	`g‘EËm’t
+(èð
+–em’t
+)
+
+62 
+found
+ = 1;
+
+65 
+´evious
+ = 
+cu¼’t
+;
+
+66 
+cu¼’t
+ = cu¼’t->
+	`g‘Next
+();
+
+69 ià(
+found
+ == 0)
+
+70 
+cout
+ << "Th–em’ˆi nÙ iÀthli¡" << 
+’dl
+;
+
+73 
+»suÉ
+ = 
+cu¼’t
+->
+	`g‘EËm’t
+();
+
+74 
+´evious
+->
+	`£tNext
+(
+cu¼’t
+->
+	`g‘Next
+());
+
+79 
+couÁ
+--;
+
+81  
+»suÉ
+;
+
+82 
+	}
+}
+
+	@LinkedList.h
+
+1 #iâdeà
+LINKEDLIST_H
+
+
+2 
+	#LINKEDLIST_H
+
+
+	)
+
+3 
+	~<io¡»am
+>
+
+4 
+	~"Lš—rNode.h
+"
+
+6 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+8 þas 
+	cLškedLi¡
+
+
+10 
+	mpublic
+:
+
+11 
+LškedLi¡
+();
+
+12 
+add
+(
+–em’t
+);
+
+13 
+»move
+ (
+–em’t
+);
+
+15 
+	m´iv©e
+:
+
+16 
+couÁ
+;
+
+17 
+Lš—rNode
+ *
+	mcÚ‹Ás
+;
+
+	@test.cpp
+
+1 
+	~<io¡»am
+>
+
+2 
+	~"Lš—rNode.h
+"
+
+3 
+	~"LškedLi¡.h
+"
+
+5 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+7 
+	$maš
+()
+
+10 
+Lš—rNode
+ 
+node1
+, 
+node2
+, 
+node3
+, 
+move
+;
+
+11 
+LškedLi¡
+ 
+li¡
+;
+
+13 
+node1
+.
+	`£tEËm’t
+(1);
+
+14 
+node2
+.
+	`£tEËm’t
+(2);
+
+15 
+node3
+.
+	`£tEËm’t
+(3);
+
+16 
+	}
+}
+
+	@
+1
+.
+1
+/usr/include
+5
+65
+LinearNode.cpp
+LinearNode.h
+LinkedList.cpp
+LinkedList.h
+test.cpp

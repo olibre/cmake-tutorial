@@ -10,7 +10,7 @@ class LinkedList
     public:
         LinkedList();
         void add(int element);
-        int removie (int element);
+        int remove (int element);
 
     private:
         int count;
