@@ -1,5 +1,5 @@
 BLDDIR = build
-INCLUDE = src #there are some .hfiles here
+INCLUDE = src #there are some .h files here
 CXX=g++
 
 
