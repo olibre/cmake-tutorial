@@ -30,6 +30,6 @@ clean:
 
 temp:
 	@echo $(SRCS)
-	@echo $(OBJS)
+
 
 .PHONY: clean all temp
