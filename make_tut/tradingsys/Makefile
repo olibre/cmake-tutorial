@@ -8,8 +8,8 @@ BLDDIR = build
 
 CC = g++
 LD = g++
-LDFLAGS = #-stdlib=libstdc++
-CFLAGS =  #-stdlib=libstdc++
+LDFLAGS = 
+CFLAGS =  
 
 TRADING_SYS_OBJS := $(patsubst %.cpp, $(BLDDIR)/%.o, $(TRADING_SYS_SRCS))
 
