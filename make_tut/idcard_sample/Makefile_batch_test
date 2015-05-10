@@ -1,0 +1,61 @@
+BLDDIR = build
+COMMON = common
+INCLUDE = include
+PLIST = PlistCpp
+RESULT = ../idcard_test_e/result
+CXX=g++
+API_INSTALL = /home/jinwei/image_framework/api_install
+
+CXXFLAGS:= -g -I$(API_INSTALL)/include -I./common -DMULTI_THREADING -I$(PLIST) -I$(INCLUDE)
+
+CXXFLAGS+=$(shell pkg-config --cflags opencv)
+LDFLAGS+=-L$(API_INSTALL)/lib
+
+LIBS:=$(patsubst lib%.so, -l%, $(shell ls $(API_INSTALL)/lib)) -lpthread 
+LIBS+=$(shell pkg-config --libs opencv)
+
+SRCS:=$(shell echo *.cpp)
+
+TARGETS:= main basic baseline
+
+all: $(patsubst %, $(BLDDIR)/%, $(TARGETS))
+VPATH = $(COMMON) $(PLIST)
+
+SRCS_PLIST = Plist.cpp PlistDate.cpp pugixml.cpp
+OBJS_PLIST = $(patsubst %.cpp, $(BLDDIR)/%.o, $(SRCS_PLIST))
+
+SRCS_BASIC = idcard_test.cpp filehelper.cpp basic_test.cpp
+OBJS_BASIC = $(patsubst %.cpp, $(BLDDIR)/%.o, $(SRCS_BASIC))
+
+$(BLDDIR)/%.o: %.cpp 
+	$(CXX) -o $@ $(CXXFLAGS) -c $<
+
+
+$(BLDDIR)/main: $(BLDDIR)/idcard_test.o $(BLDDIR)/main.o
+	$(CXX)  $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+
+
+$(BLDDIR)/basic:  $(OBJS_BASIC) $(BLDDIR)/basic.o  $(OBJS_PLIST)
+	$(CXX)  $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+$(BLDDIR)/basic: $(COMMON)/pathhelper.hpp $(COMMON)/timer.hpp
+
+
+
+$(BLDDIR)/baseline:  $(OBJS_BASIC) $(BLDDIR)/baseline_test.o $(BLDDIR)/baseline.o  $(OBJS_PLIST)
+	$(CXX)  $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+$(BLDDIR)/baseline: $(COMMON)/pathhelper.hpp $(COMMON)/timer.hpp
+
+clean:
+	rm -f ${BLDDIR}/*
+	rm -f *.o
+
+test: all
+	LD_LIBRARY_PATH="$(API_INSTALL)/lib" $(BLDDIR)/baseline
+
+temp:
+	@echo $(OBJS_PLIST)
+
+.PHONY: clean all test temp
