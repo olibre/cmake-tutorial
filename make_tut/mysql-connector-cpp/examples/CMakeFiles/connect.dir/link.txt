@@ -1,0 +1,1 @@
+/usr/bin/c++         CMakeFiles/connect.dir/connect.cpp.o  -o connect  -L/home/jinwei/cmake/make_tut/mysql-connector-cpp/cppconn -rdynamic ../driver/libmysqlcppconn-static.a -lmysqlclient -lpthread -lz -lm -ldl -Wl,-rpath,/home/jinwei/cmake/make_tut/mysql-connector-cpp/cppconn 

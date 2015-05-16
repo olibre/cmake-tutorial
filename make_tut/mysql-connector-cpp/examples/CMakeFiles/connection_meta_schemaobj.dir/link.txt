@@ -1,0 +1,1 @@
+/usr/bin/c++         CMakeFiles/connection_meta_schemaobj.dir/connection_meta_schemaobj.cpp.o  -o connection_meta_schemaobj  -L/home/jinwei/cmake/make_tut/mysql-connector-cpp/cppconn -rdynamic ../driver/libmysqlcppconn-static.a -lmysqlclient -lpthread -lz -lm -ldl -Wl,-rpath,/home/jinwei/cmake/make_tut/mysql-connector-cpp/cppconn 
