@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/packets.h
+stdint.h
+-
+
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/parser.cpp
+packets.h
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/packets.h
+parser.h
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/parser.h
+
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/parser.h
+fstream
+-
+stdint.h
+-
+
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/trading_sys.cpp
+iostream
+-
+map
+-
+parser.h
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/parser.h
+packets.h
+/Users/jinwei/github/cmake/cmake_tut/tradingsys/packets.h
+
