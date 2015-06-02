@@ -1,8 +1,13 @@
 cmake_minimum_required (VERSION 2.8)
 project (TestIDCard)
 
-set(sdk_include "/home/jinwei/image_framework/api_install/include")
-set(sdk_lib "/home/jinwei/image_framework/api_install/lib/libidcard.so")
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+       set(sdk_include "~/image_framework/api_install/include") 
+       set(sdk_lib "~/image_framework/api_install/lib/libidcard.so")
+elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+       set(sdk_include "/Users/jinwei/image_framework/api_install/include")	
+       set(sdk_lib "/Users/jinwei/image_framework/api_install/lib/libidcard.dylib")	       
+endif()
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories("${PROJECT_SOURCE_DIR}/common")
