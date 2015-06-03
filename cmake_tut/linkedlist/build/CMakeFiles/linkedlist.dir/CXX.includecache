@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.cpp
+iostream
+-
+LinearNode.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.h
+
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.h
+iostream
+-
+
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinkedList.cpp
+iostream
+-
+LinearNode.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.h
+LinkedList.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinkedList.h
+
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinkedList.h
+iostream
+-
+LinearNode.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.h
+
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/test.cpp
+iostream
+-
+LinearNode.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinearNode.h
+LinkedList.h
+/Users/jinwei/github/cmake/cmake_tut/linkedlist/LinkedList.h
+
